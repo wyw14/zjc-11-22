@@ -179,25 +179,25 @@ export function reviewCompletionSuggestion(suggestionId, { action, reviewNote, r
   if (!story) {
     return { success: false, error: '关联故事不存在', code: 404 };
   }
+  suggestion.reviewedAt = Date.now();
+  suggestion.reviewedBy = reviewedBy;
+  suggestion.reviewNote = reviewNote || null;
   if (action === 'approve') {
     suggestion.status = 'approved';
     story.isLocked = true;
+    data.completionSuggestions.forEach(s => {
+      if (s.id !== suggestion.id && s.storyId === suggestion.storyId && s.status === 'pending') {
+        s.status = 'rejected';
+        s.reviewedAt = Date.now();
+        s.reviewedBy = reviewedBy;
+        s.reviewNote = '故事已被其他建议锁定';
+      }
+    });
   } else if (action === 'reject') {
     suggestion.status = 'rejected';
   } else {
     return { success: false, error: '无效的操作', code: 400 };
   }
-  suggestion.reviewedAt = Date.now();
-  suggestion.reviewedBy = reviewedBy;
-  suggestion.reviewNote = reviewNote || null;
-  data.completionSuggestions.forEach(s => {
-    if (s.storyId === suggestion.storyId && s.status === 'pending') {
-      s.status = 'rejected';
-      s.reviewedAt = Date.now();
-      s.reviewedBy = reviewedBy;
-      s.reviewNote = '故事已被其他建议锁定';
-    }
-  });
   saveData();
   return { success: true, suggestion, story };
 }

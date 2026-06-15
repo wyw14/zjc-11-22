@@ -1,17 +1,17 @@
 {
   "stories": [
     {
-      "id": "mqege95lc030gagvm77",
+      "id": "mqem965gvy0dfafgs0h",
       "title": "????",
       "entries": [
         {
-          "id": "mqege95lb3ghx1ngx5l",
+          "id": "mqem965gxw6syk0l67n",
           "content": "????????????",
           "author": "??",
-          "createdAt": 1781482016217
+          "createdAt": 1781491856740
         }
       ],
-      "createdAt": 1781482016217,
+      "createdAt": 1781491856740,
       "isLocked": true,
       "participants": [
         "??"
@@ -20,16 +20,40 @@
   ],
   "completionSuggestions": [
     {
-      "id": "mqeger5xvo30osk5ob",
-      "storyId": "mqege95lc030gagvm77",
+      "id": "mqem9pob82pssjnkcxg",
+      "storyId": "mqem965gvy0dfafgs0h",
       "storyTitle": "????",
-      "reason": "????????,????,????????????",
-      "author": "??A",
+      "reason": "??3:?????",
+      "author": "??C",
+      "status": "rejected",
+      "createdAt": 1781491882043,
+      "reviewedAt": 1781491975896,
+      "reviewedBy": "???",
+      "reviewNote": "故事已被其他建议锁定"
+    },
+    {
+      "id": "mqem9pnirpyhbxme6d",
+      "storyId": "mqem965gvy0dfafgs0h",
+      "storyTitle": "????",
+      "reason": "??2:??????",
+      "author": "??B",
       "status": "approved",
-      "createdAt": 1781482039557,
-      "reviewedAt": 1781482061637,
+      "createdAt": 1781491882014,
+      "reviewedAt": 1781491975896,
       "reviewedBy": "???",
       "reviewNote": "??????,?????"
+    },
+    {
+      "id": "mqem9plwrob0ao1stu",
+      "storyId": "mqem965gvy0dfafgs0h",
+      "storyTitle": "????",
+      "reason": "??1:??????",
+      "author": "??A",
+      "status": "rejected",
+      "createdAt": 1781491881956,
+      "reviewedAt": 1781491929614,
+      "reviewedBy": "???",
+      "reviewNote": "?????"
     }
   ]
 }
